@@ -29,15 +29,25 @@ crewai install
 
 ## Running the Project
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+There are two ways to run this project:
+
+### Option 1: CLI
+
+From the root folder of the project, run:
 
 ```bash
-$ crewai run
+crewai run
 ```
 
-This command initializes the sales_intelligence_research_automation Crew, assembling the agents and assigning them tasks as defined in your configuration.
+This uses the crew defined in `src/sales_intelligence_research_automation/crew.py` with the YAML configs under `config/`. Make sure your API keys are set in the `.env` file.
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+### Option 2: Jupyter Notebook
+
+Open `demo.ipynb` at the project root for a self-contained, interactive demo. The notebook inlines all agent and task definitions so you can read, tweak, and run everything cell-by-cell without needing to understand the project structure. It will prompt for API keys via `getpass` so no secrets are stored in the notebook.
+
+```bash
+jupyter notebook demo.ipynb
+```
 
 ## Understanding Your Crew
 
