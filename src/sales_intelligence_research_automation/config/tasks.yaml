@@ -1,0 +1,47 @@
+---
+research_prospect_and_company:
+  description: Conduct comprehensive research on {prospect_email} to identify the
+    person and their company. Research their business model, industry position, recent
+    news, key personnel, company size, funding status, and potential business challenges
+    or opportunities. Look for any public information about their role, responsibilities,
+    and professional background.
+  expected_output: A detailed research report covering the prospect's professional
+    profile, company overview, industry analysis, recent developments, key challenges,
+    and potential business opportunities that could be relevant for our sales approach.
+  agent: company_research_specialist
+analyze_hubspot_data:
+  description: Search HubSpot for any existing records related to {prospect_email}
+    and their company. Look for contact records, company profiles, deal history, previous
+    interactions, notes, and any other relevant CRM data. If found, analyze the relationship
+    history, engagement level, and any previous sales activities or touchpoints.
+  expected_output: A comprehensive analysis of all HubSpot data related to the prospect
+    and their company, including contact history, deal pipeline status, previous interactions,
+    relationship timeline, and any recorded preferences or interests. If no data exists,
+    confirm this finding.
+  agent: hubspot_data_analyst
+analyze_email_history:
+  description: Search through Gmail for any previous email exchanges with {prospect_email}.
+    Analyze the communication patterns, frequency, tone, topics discussed, and overall
+    relationship development. Look for any mentions of business needs, pain points,
+    projects, or interests that were discussed in previous emails.
+  expected_output: A detailed analysis of email communication history with the prospect,
+    including conversation themes, relationship warmth, communication preferences,
+    any discussed business needs or challenges, and recommendations for conversation
+    approach based on past interactions. If no emails exist, confirm this finding.
+  agent: email_history_analyst
+create_sales_intelligence_report:
+  description: Synthesize all research findings from company research, HubSpot data
+    analysis, and email history to create a comprehensive sales intelligence report.
+    The report should include prospect profile, company overview, relationship context,
+    potential pain points, business opportunities, conversation starters, recommended
+    approach, and key questions to ask during the initial sales call.
+  expected_output: 'A professional sales intelligence report in markdown format that
+    includes: Executive Summary, Prospect Profile, Company Analysis, Relationship
+    History, Key Insights, Recommended Sales Approach, Conversation Starters, Potential
+    Objections & Responses, and Next Steps. The report should be actionable and ready
+    to use for the sales call.'
+  agent: sales_intelligence_report_writer
+  context:
+  - research_prospect_and_company
+  - analyze_hubspot_data
+  - analyze_email_history
